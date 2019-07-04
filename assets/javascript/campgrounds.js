@@ -1,11 +1,12 @@
 let latCurrent=0;
 let lonCurrent=0;
 
+
 const urlParams = new URLSearchParams(window.location.search);
 const search = urlParams.get('key');
-console.log(search);
+// console.log(search);
 
-console.log(search === 'zion')
+// console.log(search === 'zion')
     if(search ==='zion') {
         latCurrent = 37.2982;
         lonCurrent = 113.0263;
@@ -22,7 +23,7 @@ console.log(search === 'zion')
     }else if(search==='capitolreef'){
         latCurrent = 38.3670;
         lonCurrent = 111.2615;
-    }  console.log(latCurrent, lonCurrent);
+    }  
 
     // var lat = $(this).val();
     // var latCurrent = lat.toLowerCase().replace(/\s+/g, '');
@@ -39,43 +40,57 @@ console.log(search === 'zion')
         var i; 
         for (i=0; i<response.campgrounds.length; i++) {
             
+          // var nameDiv = $("<div></div>", {
+          //   id: "nmDiv",
+          // });
+          // $("#campgroundInfo").append("<h2>" + (nameDiv, response.campgrounds[i].name) + "</h2>");
 
-          var nameDiv = $("<div></div>", {
-            id: "nmDiv",
-          });
-          $("#campgroundInfo").append("<h2>" + (nameDiv, response.campgrounds[i].name) + "</h2>");
-
-          var locationDiv = $("<div></div>", {
-            id: "locDiv",         
-          });
-          $(".campgroundLoc").append("<h5>" + (locationDiv, response.campgrounds[i].location) + "</h5>");
-          var imageDiv = $("<img />", {
-            id: "newImage",
-            src: response.campgrounds[i].imgUrl,
-            width: 300,
-            height: 200
-          });
-          $("#campgroundInfo").append(imageDiv);
-          var urlDiv = $("<div></div>", {
-            id: "urlDiv",
-          });
-          console.log(response.campgrounds[i].isBookable);
-          var bookable=response.campgrounds[i].isBookable;
-          if (bookable == true){
-          $("#campgroundInfo").append("<h6>Book Now</h6>");
-          console.log(response.campgrounds[i].isBookable);
-          }else{
-          $("#campgroundInfo").append("<h6>More Info</h6>");
+          // var locationDiv = $("<div></div>", {
+          //   id: "locDiv",         
+          // });
+          // $(".campgroundLoc").append("<h5>" + (locationDiv, response.campgrounds[i].location) + "</h5>");
+          // var imageDiv = $("<img />", {
+          //   id: "newImage",
+          //   src: response.campgrounds[i].imgUrl,
+          //   width: 300,
+          //   height: 200
+          // });
+          // $("#campgroundInfo").append(imageDiv);
+          // var urlDiv = $("<div></div>", {
+          //   id: "urlDiv",
+          // });
+          
+            $("#campgroundInfo").append(
+              "<br><br><br><div class='card-deck'>" +
+              "<div class='card' style='background-color:lightgrey;border:none'>" +
+              "<img class='card-img-top' src='" + response.campgrounds[i++].imgUrl + "' alt='Card image cap'>" +
+              "<div class='card-body'>" +
+              "<div class='card-title'><h2>" + response.campgrounds[i].name + "</h2><h5>" + response.campgrounds[i].location + "</h5></div>" +
+              "<p class='card-text'><h6>Number of Sites: " + response.campgrounds[i].numCampsites + "</h6></p>" +
+              "<p class='card-text'><small class='text-muted'></small></p>" +
+              "<a href='" + response.campgrounds[i].url + "' class='btn btn-primary' class='bookable'> More Info </a>" +
+              "</div>" +
+              "</div>" +
+              "<div class='card' style='background-color:lightgrey;border:none'>" +
+              "<img class='card-img-top' src='" + response.campgrounds[i++].imgUrl + "' alt='Card image cap'>" +
+              "<div class='card-body'>" +
+              "<div class='card-title'><h2>" + response.campgrounds[i].name + "</h2><h5>" + response.campgrounds[i].location + "</h5></div>" +
+              "<p class='card-text'><h6>Number of Sites: " + response.campgrounds[i].numCampsites + "</h6></p>" +
+              "<p class='card-text'><small class='text-muted'></small></p>" +
+              "<a href='" + response.campgrounds[i].url + "' class='btn btn-primary' class='bookable'> More Info </a>" +
+              "</div>" +
+              "</div>" +
+              "<div class='card' style='background-color:lightgrey;border:none'>" +
+              "<img class='card-img-top' src='" + response.campgrounds[i++].imgUrl + "' alt='Card image cap'>" +
+              "<div class='card-body'>" +
+              "<div class='card-title'><h2>" + response.campgrounds[i].name + "</h2><h5>" + response.campgrounds[i].location + "</h5></div>" +
+              "<p class='card-text'><h6>Number of Sites: " + response.campgrounds[i].numCampsites + "</h6></p>" +
+              "<p class='card-text'><small class='text-muted'></small></p>" +
+              "<a href='" + response.campgrounds[i].url + "' class='btn btn-primary' class='bookable'> More Info </a>" +
+              "</div>" +
+              "</div>" +
+              "</div><br><br><hr>");           
           }
-          
-          
-          
-          $("#campgroundInfo").append("<h6>Number of Sites: " + response.campgrounds[i].numCampsites + "</h6>");
-          $("#campgroundInfo").append("<h6><a href=" + (urlDiv, response.campgrounds[i].url) + ">" + (urlDiv, response.campgrounds[i].url) + "</a></h6>");
-          $("#campgroundInfo").append($("<br><br>"));
-        
-    } 
-           
             console.log(response);
       });
 

@@ -1,3 +1,8 @@
+#dataDisplay {
+    background-color:lightgrey;
+    border:solid 5px rgb(180, 207, 185);
+}
+
 .navbar {
     background-color: #585858;
 }
