@@ -1,3 +1,11 @@
+h6 {
+    color:lightslategrey;
+}
+
+#campgroundInfo {
+    background-color:lightgrey;
+    border:solid 5px rgb(180, 207, 185);
+}
 
 
 .jumbotron {

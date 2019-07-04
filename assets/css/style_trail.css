@@ -4,22 +4,26 @@
 }
 
 #jumbotron2{
-background-color:rgb(180, 207, 185);
-width: 710px;
-/* height: 500px; */
-padding: 0 0;
-/* margin: 100px 10px 100px 100px;      */
-margin-left: 90px;
-}
-
-#jumbotron3{
-background-color:rgb(180, 207, 185);
-width: 500px;
-/* height: 500px; */
-padding: 0 0;
-/* margin: 100px 100px 100px 10px; */
-margin-left: 40px;
-}
+    background-color:lightgrey;
+    border:solid 5px rgb(180, 207, 185);
+    width: 700px;
+    /* height: 500px; */
+    padding: 0 0;
+    /* margin: 100px 10px 100px 100px;      */
+    margin-left: 90px;
+    
+    }
+    
+    #jumbotron3{
+    background-color:lightgrey;
+    border:solid 5px rgb(180, 207, 185);
+    width: 490px;
+    /* height: 500px; */
+    padding: 0 0;
+    /* margin: 100px 100px 100px 10px; */
+    margin-left: 40px;
+    
+    }
 
 #trailSingleContainer {
     width: 100%;
